@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{643BC062-ED55-4F67-A304-0E1DC81A6966}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\app\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\CacheText.cs" />
+    <Compile Include="DataFile.cs" />
+    <Compile Include="DbStore.cs" />
+    <Compile Include="DbType.cs" />
+    <Compile Include="GUI\FormLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Http\Msg.cs" />
+    <Compile Include="Http\MsgBuffer.cs" />
+    <Compile Include="Http\HostListener.cs" />
+    <Compile Include="LOG.cs" />
+    <Compile Include="Mapper\Class1.cs" />
+    <Compile Include="Msg\ClientConnect.cs" />
+    <Compile Include="Msg\HostSender.cs" />
+    <Compile Include="Msg\HostMsg.cs" />
+    <Compile Include="Msg\MsgQueue.cs" />
+    <Compile Include="Serialize\MsgSerialize.cs" />
+    <Compile Include="Msg\ClientSender.cs" />
+    <Compile Include="Msg\Msg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Msg\MsgReceiver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\ObjectSerialize.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialize\protobuf-net\BclHelpers.cs" />
+    <Compile Include="Serialize\protobuf-net\BufferExtension.cs" />
+    <Compile Include="Serialize\protobuf-net\BufferPool.cs" />
+    <Compile Include="Serialize\protobuf-net\CallbackAttributes.cs" />
+    <Compile Include="Serialize\protobuf-net\Compiler\CompilerContext.cs" />
+    <Compile Include="Serialize\protobuf-net\Compiler\CompilerDelegates.cs" />
+    <Compile Include="Serialize\protobuf-net\Compiler\Local.cs" />
+    <Compile Include="Serialize\protobuf-net\DataFormat.cs" />
+    <Compile Include="Serialize\protobuf-net\Extensible.cs" />
+    <Compile Include="Serialize\protobuf-net\ExtensibleUtil.cs" />
+    <Compile Include="Serialize\protobuf-net\GlobalSuppressions.cs" />
+    <Compile Include="Serialize\protobuf-net\Helpers.cs" />
+    <Compile Include="Serialize\protobuf-net\IExtensible.cs" />
+    <Compile Include="Serialize\protobuf-net\IExtension.cs" />
+    <Compile Include="Serialize\protobuf-net\ImplicitFields.cs" />
+    <Compile Include="Serialize\protobuf-net\KeyValuePairProxy.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\AttributeMap.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\BasicList.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\CallbackSet.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\MetaType.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\RuntimeTypeModel.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\SubType.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\TypeFormatEventArgs.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\TypeModel.cs" />
+    <Compile Include="Serialize\protobuf-net\Meta\ValueMember.cs" />
+    <Compile Include="Serialize\protobuf-net\NetObjectCache.cs" />
+    <Compile Include="Serialize\protobuf-net\PrefixStyle.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoContractAttribute.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoEnumAttribute.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoException.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoIgnoreAttribute.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoIncludeAttribute.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoMemberAttribute.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoReader.cs" />
+    <Compile Include="Serialize\protobuf-net\ProtoWriter.cs" />
+    <Compile Include="Serialize\protobuf-net\SerializationContext.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ArrayDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\BlobSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\BooleanSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ByteSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\CharSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\CompiledSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\DateTimeSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\DecimalSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\DefaultValueDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\DoubleSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\EnumSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\FieldDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\GuidSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\Int16Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\Int32Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\Int64Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\IProtoSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\IProtoTypeSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ISerializerProxy.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\KeyValuePairDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ListDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\MemberSpecifiedDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\NetObjectSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\NullDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ParseableSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\PropertyDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\ProtoDecoratorBase.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\SByteSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\SingleSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\StringSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\SubItemSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\SurrogateSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\SystemTypeSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\TagDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\TimeSpanSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\TupleSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\TypeSerializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\UInt64Serializer.cs" />
+    <Compile Include="Serialize\protobuf-net\Serializers\UriDecorator.cs" />
+    <Compile Include="Serialize\protobuf-net\SubItemToken.cs" />
+    <Compile Include="Serialize\protobuf-net\WireType.cs" />
+    <Compile Include="7zip\Lzma\Common\CRC.cs" />
+    <Compile Include="7zip\Lzma\ICoder.cs" />
+    <Compile Include="7zip\Lzma\LZMA\LzmaBase.cs" />
+    <Compile Include="7zip\Lzma\LZMA\LzmaDecoder.cs" />
+    <Compile Include="7zip\Lzma\LZMA\LzmaEncoder.cs" />
+    <Compile Include="7zip\Lzma\LZ\IMatchFinder.cs" />
+    <Compile Include="7zip\Lzma\LZ\LzBinTree.cs" />
+    <Compile Include="7zip\Lzma\LZ\LzInWindow.cs" />
+    <Compile Include="7zip\Lzma\LZ\LzOutWindow.cs" />
+    <Compile Include="7zip\Lzma\RangeCoder\RangeCoder.cs" />
+    <Compile Include="7zip\Lzma\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="7zip\Lzma\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="7zip\Lzma\SevenZipHelper.cs" />
+    <Compile Include="7zip\SevenZipCompress.cs" />
+    <Compile Include="Socket\Fleck2\FleckExtensions.cs" />
+    <Compile Include="Socket\Fleck2\FleckLog.cs" />
+    <Compile Include="Socket\Fleck2\FrameType.cs" />
+    <Compile Include="Socket\Fleck2\HandlerFactory.cs" />
+    <Compile Include="Socket\Fleck2\Handlers\ComposableHandler.cs" />
+    <Compile Include="Socket\Fleck2\Handlers\Draft76Handler.cs" />
+    <Compile Include="Socket\Fleck2\Handlers\Hybi13Handler.cs" />
+    <Compile Include="Socket\Fleck2\HandshakeException.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\ICancellationToken.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\IHandler.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\ISocket.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\IWebSocketConnection.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\IWebSocketConnectionInfo.cs" />
+    <Compile Include="Socket\Fleck2\Interfaces\IWebSocketServer.cs" />
+    <Compile Include="Socket\Fleck2\IntExtensions.cs" />
+    <Compile Include="Socket\Fleck2\ReadState.cs" />
+    <Compile Include="Socket\Fleck2\RequestParser.cs" />
+    <Compile Include="Socket\Fleck2\SocketCancellationToken.cs" />
+    <Compile Include="Socket\Fleck2\SocketCancellationTokenException.cs" />
+    <Compile Include="Socket\Fleck2\SocketFactory.cs" />
+    <Compile Include="Socket\Fleck2\SocketResult.cs" />
+    <Compile Include="Socket\Fleck2\SocketWrapper.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketConnection.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketConnectionInfo.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketException.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketHttpRequest.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketServer.cs" />
+    <Compile Include="Socket\Fleck2\WebSocketStatusCodes.cs" />
+    <Compile Include="Socket\HttpServer.cs" />
+    <Compile Include="Msg\HostServer.cs" />
+    <Compile Include="Socket\Proxy\Host.cs" />
+    <Compile Include="Socket\Proxy\HttpPacket.cs" />
+    <Compile Include="Socket\Proxy\HttpPacketBuilder.cs" />
+    <Compile Include="Socket\Proxy\Logger.cs" />
+    <Compile Include="Socket\Proxy\TcpConnectionManager.cs" />
+    <Compile Include="Socket\Proxy\TcpHost.cs" />
+    <Compile Include="Socket\Proxy\TcpProxyConfiguration.cs" />
+    <Compile Include="Socket\Proxy\TcpProxyServer.cs" />
+    <Compile Include="Socket\Proxy\TcpRoute.cs" />
+    <Compile Include="Socket\Proxy\TcpStateContainer.cs" />
+    <Compile Include="Socket\Proxy\WebSocketHeaders.cs" />
+    <Compile Include="Socket\websocket-sharp\ByteOrder.cs" />
+    <Compile Include="Socket\websocket-sharp\CloseEventArgs.cs" />
+    <Compile Include="Socket\websocket-sharp\CloseStatusCode.cs" />
+    <Compile Include="Socket\websocket-sharp\CompressionMethod.cs" />
+    <Compile Include="Socket\websocket-sharp\ErrorEventArgs.cs" />
+    <Compile Include="Socket\websocket-sharp\Ext.cs" />
+    <Compile Include="Socket\websocket-sharp\Fin.cs" />
+    <Compile Include="Socket\websocket-sharp\HttpBase.cs" />
+    <Compile Include="Socket\websocket-sharp\HttpRequest.cs" />
+    <Compile Include="Socket\websocket-sharp\HttpResponse.cs" />
+    <Compile Include="Socket\websocket-sharp\LogData.cs" />
+    <Compile Include="Socket\websocket-sharp\Logger.cs" />
+    <Compile Include="Socket\websocket-sharp\LogLevel.cs" />
+    <Compile Include="Socket\websocket-sharp\Mask.cs" />
+    <Compile Include="Socket\websocket-sharp\MessageEventArgs.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\AuthenticationBase.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\AuthenticationChallenge.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\AuthenticationResponse.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\AuthenticationSchemes.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\Chunk.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ChunkedRequestStream.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ChunkStream.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ClientSslConfiguration.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\Cookie.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\CookieCollection.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\CookieException.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\EndPointListener.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\EndPointManager.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpBasicIdentity.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpConnection.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpDigestIdentity.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpHeaderInfo.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpHeaderType.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListener.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerAsyncResult.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerContext.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerException.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerPrefix.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerRequest.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpListenerResponse.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpRequestHeader.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpResponseHeader.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpStatusCode.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpUtility.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\HttpVersion.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\InputChunkState.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\InputState.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\LineState.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\NetworkCredential.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\QueryStringCollection.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ReadBufferState.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\RequestStream.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ResponseStream.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\ServerSslConfiguration.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\SslConfiguration.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\WebHeaderCollection.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="Socket\websocket-sharp\Net\WebSockets\WebSocketContext.cs" />
+    <Compile Include="Socket\websocket-sharp\Opcode.cs" />
+    <Compile Include="Socket\websocket-sharp\PayloadData.cs" />
+    <Compile Include="Socket\websocket-sharp\Rsv.cs" />
+    <Compile Include="Socket\websocket-sharp\WebSocket.cs" />
+    <Compile Include="Socket\websocket-sharp\WebSocketException.cs" />
+    <Compile Include="Socket\websocket-sharp\WebSocketFrame.cs" />
+    <Compile Include="Socket\websocket-sharp\WebSocketState.cs" />
+    <Compile Include="System\ConcurrentDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\Kernel.cs" />
+    <Compile Include="System\ReaderWriterLockSlim.cs" />
+    <Compile Include="Serialize\MessageShark\CustomBinary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.Deserializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.IL.Deserialize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.IL.Generator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.IL.Serialize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.Serializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBinary.Setup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\CustomBuffer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\InternalWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\ISerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\MessageSharkIgnoreAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\MessageSharkIncludeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\MessageSharkSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialize\MessageShark\Synchronized\SynchronizedCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System.Collections.Generic\HashSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System.Collections.Generic\ISet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System\System.IO.MemoryMappedFiles\FileMapIOException.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\MapViewStream.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\MemoryMappedFile.cs" />
+    <Compile Include="System\System.IO.MemoryMappedFiles\Win32APIs.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Dynamic.v2.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\BinaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ConditionalExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ConstantExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ElementInit.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\EmitContext.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Expression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionPrinter.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionTransformer.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionType.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ExpressionVisitor.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Expression_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\Extensions.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\InvocationExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\LambdaExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ListInitExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberAssignment.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberBindingType.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberInitExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberListBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MemberMemberBinding.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\MethodCallExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\NewArrayExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\NewExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\ParameterExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\TypeBinaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Expressions\UnaryExpression.cs" />
+    <Compile Include="System\System.Linq\System.Linq.Ext.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Check.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Enumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableExecutor.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableExecutor_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\EnumerableQuery_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Grouping.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IGrouping.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ILookup_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedEnumerable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedQueryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IOrderedQueryable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryable_T.cs" />
+    <Compile Include="System\System.Linq\System.Linq\IQueryProvider.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Lookup.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedParallelQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\OrderedSequence.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelExecutionMode.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelMergeOptions.cs" />
+    <Compile Include="System\System.Linq\System.Linq\ParallelQuery.cs" />
+    <Compile Include="System\System.Linq\System.Linq\Queryable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QueryableEnumerable.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QueryableTransformer.cs" />
+    <Compile Include="System\System.Linq\System.Linq\QuickSort.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortContext.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortDirection.cs" />
+    <Compile Include="System\System.Linq\System.Linq\SortSequenceContext.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\DynamicAttribute.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\ExecutionScope.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\ExtensionAttribute.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\IStrongBox.cs" />
+    <Compile Include="System\System.Runtime.CompilerServices\StrongBox_T.cs" />
+    <Compile Include="System\System\Action.cs" />
+    <Compile Include="System\System\Func.cs" />
+    <Compile Include="System\Tuple\IStructuralComparable.cs" />
+    <Compile Include="System\Tuple\IStructuralEquatable.cs" />
+    <Compile Include="System\Tuple\Tuple.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Serialize\protobuf-net\_ReadMe.txt" />
+    <Content Include="7zip\Readme.txt" />
+    <Content Include="Socket\Fleck2\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Msg\bak\" />
+    <Folder Include="Serialize\MessageShark\Synchronized\hide\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
